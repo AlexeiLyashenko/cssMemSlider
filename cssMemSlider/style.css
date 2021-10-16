@@ -63,25 +63,32 @@ body,
     display: flex;
 }
 .bullet {
-    /* display: block; */
+    padding: 5px;
     margin-left: 10px;
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    background-color: rgba(62, 119, 143, 1);
-    transition: all .3s ease;
     cursor: pointer;
+
 }
-/* .bullet:hover {
-    background-color: rgb(40, 99, 124);
+.bullet span {
+    display: block;
+    width: 1.1rem;
+    height: 1.1rem;
+    border-radius: 50%;
+    background-color: rgba(170, 209, 226, 1);
+    transition: all .3s ease;
+    border: 3px solid rgba(62, 119, 143, .9);
+}
+.bullet:hover span {
+    background-color: rgba(62, 119, 143, .7);
+    transform: scale(1.1);
     transition: all .3s ease;
 }
-.bullet:active {
-    background-color: rgba(62, 119, 143, .8);
+.bullet:active span {
+    background-color: rgba(62, 119, 143, .3);
+    transform: scale(.9);
     transition: all .3s ease;
 
-} */
-/* .label-wrapper {
+}
+ .label-wrapper {
     cursor: pointer;
     margin-left: 15px;
     padding: 10px;
@@ -95,13 +102,7 @@ body,
     background-color: rgba(62, 119, 143, .8);
     transition: all .3s ease;
     
-} */
-
-.bullet::before {
-    content: '';
-    display: block;
-    padding: 10px;
-}
+} 
 
 input[name='r'] {
     visibility: hidden;
@@ -130,4 +131,17 @@ input[type="radio"]:checked label {
 #r4:checked ~ .container .t1 {
     margin-left: -75%;
     transition: all .4s ease
+}
+
+#r1:checked ~ .container .b1 > span {
+    background-color: rgba(62, 119, 143, .9);
+}
+#r2:checked ~ .container .b2 > span {
+    background-color: rgba(62, 119, 143, .9);
+}
+#r3:checked ~ .container .b3 > span {
+    background-color: rgba(62, 119, 143, .9);
+}
+#r4:checked ~ .container .b4 > span {
+    background-color: rgba(62, 119, 143, .9);
 }
